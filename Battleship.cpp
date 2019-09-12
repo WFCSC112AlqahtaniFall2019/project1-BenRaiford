@@ -41,6 +41,14 @@ int main() {
         cin >> userRow;
         cin >> userColumn;
 
+        //prevents out-of-bounds guesses
+        while(userRow < 1 || userRow > 3 || userColumn < 1 || userRow > 3){
+            cout << "You have entered an invalid location. "
+                    "Enter a location (one through three) in the format: row column." <<endl;
+            cin >> userRow;
+            cin >> userColumn;
+        }
+
         //prevents repeat guesses
         while(matrix[userRow - 1][userColumn - 1] == 0){
             cout << "You have already guessed that location. Enter a new location." << endl;
